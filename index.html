@@ -979,12 +979,20 @@ html{scroll-padding-top:var(--hdr)}
 #demo-p2 .ph-foot{margin-top:auto;text-align:center;font-size:10px;color:oklch(45% .02 60)}
 #demo-p2 .pov{position:relative;margin:0;border-radius:12px;overflow:hidden;min-width:0;background:#000}
 #demo-p2 .pov img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-#demo-p2 .pov-hud{position:absolute;inset:0;padding:14px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(0deg,#000a,transparent 45%)}
-#demo-p2 .pov-k{align-self:flex-start;font-size:11px;background:oklch(16% .013 242 / .85);padding:3px 8px;border-radius:2px;color:var(--light)}
-#demo-p2 .pov-voice{align-self:center;font-size:clamp(15px,1.5vw,20px);font-weight:800;color:var(--accent);text-shadow:0 2px 10px #000;background:oklch(16% .013 242 / .55);padding:6px 14px;border-radius:999px;border:1px solid oklch(84% .122 75 / .5)}
-#demo-p2 .pov-card{align-self:flex-end;display:grid;gap:2px;padding:9px 14px;border-radius:8px;border:1px solid oklch(84% .122 75 / .7);background:oklch(18% .02 70 / .75);color:var(--light);backdrop-filter:blur(4px)}
+#demo-p2 .pov-hud{position:absolute;inset:0;padding:14px;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,3fr) auto minmax(8px,1fr) auto;background:linear-gradient(0deg,#000a,transparent 45%)}
+#demo-p2 .pov-k{justify-self:start;font-size:11px;background:oklch(16% .013 242 / .85);padding:3px 8px;border-radius:2px;color:var(--light)}
+#demo-p2 .pov-voice{grid-row:3;justify-self:center;text-align:center;text-wrap:balance;font-size:clamp(14px,1.35vw,18px);font-weight:700;color:oklch(84% .122 75 / .9);text-shadow:0 1px 3px #000c;background:oklch(16% .013 242 / .3);padding:5px 10px;border-radius:16px;border:1px solid oklch(84% .122 75 / .25)}
+#demo-p2 .pov-card{grid-row:5;justify-self:end;display:grid;gap:2px;padding:9px 14px;border-radius:8px;border:1px solid oklch(84% .122 75 / .7);background:oklch(18% .02 70 / .75);color:var(--light);backdrop-filter:blur(4px)}
 #demo-p2 .pov-card small{font-size:10px;color:var(--accent)}
 #demo-p2 .pov-card b{font-size:15px}
+#demo-p2 .p2-display:has(.p2-invite:not([hidden])){container-type:inline-size}
+@container (max-width:500px){
+  #demo-p2 .p2-invite{grid-template-columns:minmax(0,.85fr) minmax(0,1fr);grid-template-rows:minmax(0,1fr);gap:8px;padding:8px}
+  #demo-p2 .phone{width:100%;min-height:0;aspect-ratio:auto}
+  #demo-p2 .phone-screen{overflow-y:auto}
+  #demo-p2 .pov-hud{padding:8px;grid-template-rows:auto minmax(0,6fr) auto minmax(8px,1fr) auto}
+  #demo-p2 .pov-card{padding:6px 8px}
+}
 /* p6 panes */
 :is(#demo-p6) .kb-console{gap:9px}
 :is(#demo-p6) .kb-console h3{font-size:clamp(18px,1.6vw,22px)}
