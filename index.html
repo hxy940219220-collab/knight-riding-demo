@@ -4343,7 +4343,8 @@ window.KNIGHT_EN = {"# / # 人已入队": "# / # joined", "# / # 人已入队 ·
       if (!e.target.closest('button')) return;
       st.reset();
       window.KnightVoice.stopManual();
-      setTimeout(() => { if (current() === cfg.route) st.start(); }, 60);
+      const tabToken = st.tok;
+      setTimeout(() => { if (tabToken === st.tok && current() === cfg.route) st.start(); }, 60);
     });
     st.renderSteps();
     return st;
