@@ -45,9 +45,20 @@ function passwordPage(request, wrongPassword = false) {
     label { display: block; margin-bottom: 8px; font-size: 14px; font-weight: 600; }
     input, button { display: block; width: 100%; min-height: 46px; padding: 10px 14px; border-radius: 8px; font: inherit; }
     input { border: 1px solid #606b63; background: #131a16; color: inherit; }
+    input[aria-invalid="true"] { border-color: #ffb5a5; }
     button { margin-top: 16px; border: 0; background: #f2b976; color: #251b11; font-weight: 750; cursor: pointer; }
     input:focus-visible, button:focus-visible { outline: 2px solid #fff0d9; outline-offset: 2px; }
     .error { margin: 10px 0 0; color: #ffb5a5; font-size: 14px; }
+    @media (prefers-reduced-motion: no-preference) {
+      input[aria-invalid="true"] { animation: password-shake 420ms ease-out; }
+      @keyframes password-shake {
+        0%, 100% { transform: translateX(0); }
+        20% { transform: translateX(-8px); }
+        40% { transform: translateX(8px); }
+        60% { transform: translateX(-5px); }
+        80% { transform: translateX(3px); }
+      }
+    }
   </style>
 </head>
 <body>
