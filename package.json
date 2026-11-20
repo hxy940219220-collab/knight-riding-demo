@@ -1,0 +1,11 @@
+{
+  "name": "knight-riding-demo",
+  "private": true,
+  "dependencies": {
+    "@vercel/functions": "3.11.3"
+  },
+  "engines": {
+    "node": "24.x"
+  },
+  "type": "module"
+}
